@@ -236,6 +236,25 @@ nav ul li a:hover{
   background: #ff6b4a;
 }
 
+/* contact message styles */
+#form-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: none;
+}
+
+#form-message.success {
+  color: #4caf50;
+  display: block;
+}
+
+#form-message.error {
+  color: #f44336;
+  display: block;
+}
+
+
 /* footer */
 
 footer{
@@ -366,4 +385,25 @@ footer .footer-bottom {
   footer .footer-email {
     font-size: 0.8rem;
   }
+}
+
+
+
+
+/* contact message styles */
+#form-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  display: none; /* hidden by default */
+}
+
+#form-message.success {
+  color: #4caf50; /* green for success */
+  display: block;
+}
+
+#form-message.error {
+  color: #f44336; /* red for error */
+  display: block;
 }

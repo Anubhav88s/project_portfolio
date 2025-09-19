@@ -40,3 +40,29 @@ gsap.utils.toArray("section").forEach(section => {
     }
   });
 });
+
+/* EmailJS */
+
+(function() {
+  emailjs.init("CeoH_ddX6EWHSIlSU"); 
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const messageEl = document.getElementById("form-message");
+
+  emailjs.sendForm("service_znw9smj", "template_g59ivfh", this)
+    .then(() => {
+      messageEl.textContent = "✅ Message sent successfully!";
+      messageEl.className = "success";
+      this.reset();
+
+      setTimeout(() => { messageEl.textContent = ""; messageEl.className = ""; }, 5000);
+    }, (error) => {
+      messageEl.textContent = "❌ Failed to send message. Please try again.";
+      messageEl.className = "error";
+    
+      setTimeout(() => { messageEl.textContent = ""; messageEl.className = ""; }, 5000);
+    });
+});
